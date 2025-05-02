@@ -11,7 +11,7 @@ class Node:
         self._parent: Node = parent
 
 class RRT:
-    def __init__(self, start: Tuple[float, float], goal: Tuple[float, float], map_size: Tuple[float, float], obstacles: List[Tuple[float, float, float, float]] = [], step_size=1.0, max_iter=500):
+    def __init__(self, start: Tuple[float, float], goal: Tuple[float, float], map_size: Tuple[float, float], obstacles: List[Tuple[float, float, float, float]] = [], step_size=1.0, max_iter=5000):
         self._start = Node(*start)
         self._goal = Node(*goal)
         self._map_width, self._map_height = map_size
@@ -94,7 +94,7 @@ def plot_rrt(rrt: RRT, path=None):
 
 if __name__ == "__main__":
     start = (1, 1)
-    goal = (5, 5)
+    goal = (18, 18)
 
     obstacles = [
         (5, 5, 2, 12),
